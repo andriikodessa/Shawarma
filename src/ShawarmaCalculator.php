@@ -16,7 +16,7 @@ class ShawarmaCalculator
     public function ingredients()
     {
         $ingredients = [];
-        foreach ($this->shawarmas as $shawarma){
+        foreach ($this->shawarmas as $shawarma) {
             $ingredients += $shawarma->getIngredients();
         }
         return (array_unique($ingredients));
@@ -27,7 +27,7 @@ class ShawarmaCalculator
     {
         $price = 0;
 
-        foreach ($this->shawarmas as $shawarma){
+        foreach ($this->shawarmas as $shawarma) {
             $price += $shawarma->getCost();
         }
 
