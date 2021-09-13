@@ -4,25 +4,30 @@ declare(strict_types=1);
 
 require_once '../vendor/autoload.php';
 
-use App\ShawarmaOdessa;
-use App\ShawarmaLamb;
-use App\ShawarmaBeef;
-
-$odessa = new ShawarmaOdessa();
+$odessa = new \App\ShawarmaOdessa();
 
 echo ("<pre>");
 var_dump($odessa);
 echo ("</pre>");
 
-$Beef = new ShawarmaBeef();
+$Beef = new \App\ShawarmaBeef();
 
 echo ("<pre>");
 var_dump($Beef);
 echo ("</pre>");
 
-$Lamb = new ShawarmaLamb();
+$Lamb = new \App\ShawarmaLamb();
 
 echo ("<pre>");
 var_dump($Lamb);
 echo ("</pre>");
 
+$calc = new \App\ShawarmaCalculator();
+
+$calc->add($odessa);
+
+$calc->add($Beef);
+
+echo $calc->price();
+
+var_dump($calc->ingredients());

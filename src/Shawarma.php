@@ -4,25 +4,19 @@ declare(strict_types=1);
 
 namespace App;
 
-class Shawarma
+abstract class Shawarma
 {
-    protected float $cost;
-
-    protected function getCost(): float
+    public function getCost(): float
     {
         return $this->cost;
     }
 
-    protected array $ingredients;
-
-    protected function getIngredients(): array
+    public function getIngredients(): array
     {
         return $this->ingredients;
     }
 
-    public string $title;
-
-    protected function getTitle(): string
+    public function getTitle(): string
     {
         return $this->title;
     }

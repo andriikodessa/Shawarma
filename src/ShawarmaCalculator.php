@@ -6,24 +6,52 @@ namespace App;
 
 class ShawarmaCalculator
 {
-    public object $shawarma;
+    protected $shawarmas = [];
 
-    public function __construct(object $shawarma)
+    public function add(Shawarma $shawarma)
     {
-        $this->setShawarma($shawarma);
+        $this->shawarmas[] = $shawarma;
     }
 
-    public function getShawarma(): object
+    public function ingredients()
     {
-        return $this->shawarma;
+        $ingredients = [];
+        foreach ($this->shawarmas as $shawarma){
+            $ingredients += $shawarma->getIngredients();
+        }
+        return (array_unique($ingredients));
     }
 
-    public function setShawarma(object $shawarma): void
+
+    public function price()
     {
-        $this->shawarma = $shawarma;
+        $price = 0;
+
+        foreach ($this->shawarmas as $shawarma){
+            $price += $shawarma->getCost();
+        }
+
+        return $price;
     }
-//    function add(Shawarma $shawarma)
-//    {
+
+
+
+//    protected $price = 0;
+//    protected $ingredients =[];
 //
+//    public function add(Shawarma $shawarma)
+//    {
+//        $this->price += $shawarma->getCost();
+//        $this->ingredients = array_merge($this->ingredients, $shawarma->getIngredients());
+//    }
+//
+//    public function ingredients()
+//    {
+//        return (array_unique($this->ingredients));
+//    }
+//
+//    public function price()
+//    {
+//        return $this->price;
 //    }
 }

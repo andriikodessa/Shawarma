@@ -6,25 +6,16 @@ namespace App;
 
 class ShawarmaLamb extends Shawarma
 {
-    protected function getCost(): float
-    {
-        return parent::getCost();
-    }
+    protected string $title = "Шаурма из баранины";
 
-    protected function getIngredients(): array
-    {
-        return parent::getIngredients();
-    }
-
-    protected function getTitle(): string
-    {
-        return parent::getTitle();
-    }
-
-    public string $title = "Шаурма из баранины";
-
-    protected array $ingredients = ["острый соус, огурцы маринованные, кинза, помидоры свежие,
-                                  маринованный лук с барбарисом и зеленью, мясо баранины, лаваш арабский"];
+    protected array $ingredients = [
+        "острый соус",
+        "огурцы маринованные",
+        "кинза",
+        "помидоры свежие",
+        "маринованный лук с барбарисом и зеленью",
+        "мясо баранины",
+        "лаваш арабский"];
 
     protected float $cost = 85;
 }
